@@ -1,13 +1,33 @@
 .quote-card-content{
-  text-align: left;
+  text-align: center;
   font-style: italic;
-  font-size: 2em;
+  font-size: 1.5em;
   font-family: 'Courier New', Courier, monospace;
+}
+body{
+  background-color: rgb(0, 255, 170);
 }
 
 .quote-card{
+  background-color: white;
   text-align: center;
   display: flexbox;
-  margin-left: 50vh;
+  margin-left: 0.5vh;
   margin-top: 20vh;
+  border: 10px solid rgb(255, 255, 255);
+  border-style: dotted;
+}
+
+#quote-button{
+  width: 200px;
+  height: 50px;
+  background-color: red;
+  color: white;
+  text-transform: capitalize;
+  font-weight: 900;
+}
+
+#quote-button:hover{
+  background-color: rgb(216, 118, 118);
+  transition: 0.7s;
 }

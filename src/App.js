@@ -7,7 +7,7 @@ function App() {
 
   const config = {
     headers:{
-      'X-Api-Key': '9ljd8SJvONzkK0vgwPVvl6ur6bvRzs9eL4IYSwKp'
+      'X-Api-Key': `${process.env.REACT_APP_VERY_PRIVATE_KEY}`
     }
   }
   const url = 'https://api.api-ninjas.com/v1/quotes?category=success'
@@ -15,7 +15,6 @@ function App() {
     axios.get(url, config)
     .then(res => {
       setQuote(res.data)
-      console.log(res.data)
     })
     .catch(err=> console.log(err))
 
@@ -30,7 +29,7 @@ function App() {
 
   return (
     <div className='quote-card'>
-      <h1>Quote generator</h1>
+      <h1>Random success quote generator</h1>
       {quote.map((item) => (
         <div className='quote-card-content'>
           <p>{item.quote}</p>
@@ -38,7 +37,7 @@ function App() {
         </div>
 
       ))}
-      <button onClick={ShowQuote}>Get new Quote</button>
+      <button id='quote-button' onClick={ShowQuote}>Get new Quote</button>
     </div>
   );
 }
