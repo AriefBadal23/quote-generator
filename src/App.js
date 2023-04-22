@@ -4,10 +4,9 @@ import axios from 'axios'
 
 function App() {
   const [quote, setQuote] = useState([]);
-
   const config = {
     headers:{
-      'X-Api-Key': `${process.env.REACT_APP_VERY_PRIVATE_KEY}`
+      'X-Api-Key': process.env.REACT_APP_API_KEY
     }
   }
   const url = 'https://api.api-ninjas.com/v1/quotes?category=success'
@@ -16,7 +15,10 @@ function App() {
     .then(res => {
       setQuote(res.data)
     })
-    .catch(err=> console.log(err))
+    .catch(
+      err=> console.log(err)
+    )
+
 
   }
   
@@ -29,7 +31,8 @@ function App() {
 
   return (
     <div className='quote-card'>
-      <h1>Random success quote generator</h1>
+      <h1>Random quote generator</h1>
+      <p>Quote about success</p>
       {quote.map((item) => (
         <div className='quote-card-content'>
           <p>{item.quote}</p>
